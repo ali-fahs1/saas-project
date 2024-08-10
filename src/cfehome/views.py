@@ -6,9 +6,10 @@ def home_page_views(request):
     my_title='My Page'
     
     my_context={
-        'page_title':my_title,
+        
         'page_visit_count':page_qs.count(),
         'total_visit_count':qs.count(),
+        'page_title':my_title,
     }
     
     path=request.path
