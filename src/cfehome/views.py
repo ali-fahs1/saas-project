@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from visits.models import PageVisit
-def home_page_views(request):
+def home_views(request):
+     return about_view(request)
+
+def about_view(request):
     qs=PageVisit.objects.all()
     page_qs=PageVisit.objects.filter(path=request.path)
     my_title='My Page'
@@ -17,4 +20,3 @@ def home_page_views(request):
 
 
     return render(request,'home.html',my_context)
-
